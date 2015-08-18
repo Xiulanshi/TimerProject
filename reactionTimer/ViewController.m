@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.redView.layer.cornerRadius = 100;
+    self.redView.layer.cornerRadius = 150;
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"Reaction Timer";
     self.timeLabel.text = @" ";
@@ -81,8 +81,6 @@
     
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeEllapsed = [currentDate timeIntervalSinceDate:self.previousDate];
-    NSLog(@"%f", timeEllapsed);
-    NSLog(@"here");
     self.timeLabel.text = [NSString stringWithFormat:@"%.2f", timeEllapsed];
 
     
@@ -105,7 +103,6 @@
     CGFloat currentTime = [self.timeLabel.text floatValue];
     if (currentTime < self.bestTime || !self.bestTime) {
         self.bestTime = currentTime;
-      //  NSLog(@"%.2f", self.bestTime);
         self.textLabel.text = (@"Your best reaction time is:");
 
     }
